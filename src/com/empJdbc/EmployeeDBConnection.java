@@ -32,6 +32,7 @@ public class EmployeeDBConnection {
 		return connection;
 	}
 
+	//get employee data 
 	private List<EmployeePayrollData> getEmployeePayrollDataUsingDB(String sql) {
 		List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 		try (Connection connection = this.getConnection()) {
@@ -50,6 +51,7 @@ public class EmployeeDBConnection {
 		return employeePayrollList;
 	}
 
+	//update salary using query
 	private int updateEmployeeDataUsingStatement(String name, double salary) {
 		String sql = String.format("UPDATE employee_payroll_service123  SET salary = %.2f WHERE name = '%s';", salary, name);
 		try (Connection connection = this.getConnection()) {
@@ -61,6 +63,7 @@ public class EmployeeDBConnection {
 		return 0;
 	}
 
+	//prepared statement 
 	private void preparedStatementForEmployeeData() {
 		try {
 			Connection connection = this.getConnection();
