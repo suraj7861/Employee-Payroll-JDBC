@@ -32,7 +32,7 @@ public class EmployeeDBConnection {
 		return connection;
 	}
 
-	//get employee data 
+	//get employee data from database
 	private List<EmployeePayrollData> getEmployeePayrollDataUsingDB(String sql) {
 		List<EmployeePayrollData> employeePayrollList = new ArrayList<>();
 		try (Connection connection = this.getConnection()) {
@@ -104,6 +104,7 @@ public class EmployeeDBConnection {
 		return employeePayrollList;
 	}
 
+	
 	public int updateEmployeeData(String name, double salary) {
 		return this.updateEmployeeDataUsingStatement(name, salary);
 	}
