@@ -51,7 +51,7 @@ public class EmployeeDBConnection {
 		return employeePayrollList;
 	}
 
-	//update salary using query
+	//update salary using update query
 	private int updateEmployeeDataUsingStatement(String name, double salary) {
 		String sql = String.format("UPDATE employee_payroll_service123  SET salary = %.2f WHERE name = '%s';", salary, name);
 		try (Connection connection = this.getConnection()) {
